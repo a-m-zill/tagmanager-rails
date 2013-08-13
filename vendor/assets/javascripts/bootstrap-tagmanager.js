@@ -186,7 +186,7 @@
       if (typeof (tagManagerOptions.typeaheadAjaxSource) == "string") {
         $.ajax({
           cache: false,
-          type: "POST",
+          type: tagManagerOptions.typeaheadAjaxMethod,
           contentType: "application/json",
           dataType: "json",
           url: tagManagerOptions.typeaheadAjaxSource,
@@ -285,7 +285,8 @@
 
     var pushAllTags = function (e, tagstring) {
       if (tagManagerOptions.AjaxPushAllTags) {
-        $.post(tagManagerOptions.AjaxPush, { tags: tagstring });
+        $.post(tagManagerOptions.AjaxPush, $.extend({ tags: tagstring }, tagManagerOptions.AjaxPushParameters));
+        
       }
     };
 
@@ -296,9 +297,9 @@
 
       if (tagManagerOptions.typeaheadSource != null)
       {
-          var source = $.isFunction(tagManagerOptions.typeaheadSource) ? 
+          var source = $.isFunction(tagManagerOptions.typeaheadSource) ?
                       tagManagerOptions.typeaheadSource() : tagManagerOptions.typeaheadSource;
-                      
+
           if(tagManagerOptions.onlyTagList &&
               $.inArray(tag, source) == -1) return;
       }
@@ -317,7 +318,7 @@
       if (tagManagerOptions.maxTags > 0 && tlis.length >= tagManagerOptions.maxTags) return;
 
       var alreadyInList = false;
-      var tlisLowerCase = tlis.map(function(elem) { return elem.toLowerCase(); });
+      var tlisLowerCase = $.map(tlis, function(elem){ return elem.toLowerCase(); });
       var p = $.inArray(tag.toLowerCase(), tlisLowerCase);
       if (-1 != p) {
         // console.log("tag:" + tag + " !!already in list!!");
@@ -407,6 +408,8 @@
     return this.each(function () {
 
       if (typeof options == 'string') {
+        //restore options state before public method calls
+        tagManagerOptions = obj.data('tagManager-options');
         switch (options) {
           case "empty":
             empty();
@@ -457,7 +460,7 @@
 
       // hide popovers on focus and keypress events
       obj.on('focus keypress', function (e) {
-        if ($(this).popover) {
+        if ($(this).data('popover')) {
           $(this).popover('hide');
         }
       });
@@ -490,7 +493,13 @@
 
         // push key-based delimiters (includes <enter> by default)
         if (keyInArray(e, delimiterKeys)) {
-          applyDelimiter(e);
+            var tag = trimTag(obj.val());
+
+            // should pass tab key if current field is empty
+            if ((!tag || tag.length <= 0) && e.which == 9)
+                return;
+
+            applyDelimiter(e);
         }
       });
 
@@ -538,6 +547,9 @@
       } else if (tagManagerOptions.hiddenTagListId != null) {
         prefill($('#' + tagManagerOptions.hiddenTagListId).val().split(baseDelimiter));
       }
+
+      //store options state for further public method calls
+      obj.data('tagManager-options', tagManagerOptions);
     });
   }
 })(jQuery);
