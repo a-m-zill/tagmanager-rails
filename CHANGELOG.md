@@ -1,3 +1,6 @@
+## patch (2013-08-13)
+tielefeld: added the latest version of max-favilli/tagmanager and applied a one-liner making pushAllTags work with pushParameters
+
 ## 0.0.2 (2013-07-21)
 
 [Compare changes in gem](https://github.com/tmaier/tagmanager-rails/compare/v0.0.1...v0.0.2)

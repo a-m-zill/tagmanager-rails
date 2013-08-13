@@ -1,3 +1,11 @@
+## This fork
+This is only relevant to people who need to set pushParameters and the pushAllTags command at the same time. This did not work in the version of the standalone tagmanager from max-favilli.
+
+When this works, I'll ask Tobias (tmaier) to pull it.
+
+I also added the latest version of max-favilli/tagmanager.
+
+
 # tagmanager-rails
 
 [![Gem Version](https://badge.fury.io/rb/tagmanager-rails.png)](http://badge.fury.io/rb/tagmanager-rails)
