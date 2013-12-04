@@ -1,4 +1,7 @@
 ## This fork
+I had to adjust the SASS variable names to work with the [bootstrap-sass](https://github.com/thomas-mcdonald/bootstrap-sass) gem.
+
+## [tielefeld's fork](https://github.com/tielefeld/tagmanager-rails)
 This is only relevant to people who need to set pushParameters and the pushAllTags command at the same time. This did not work in the version of the standalone tagmanager from max-favilli.
 
 When this works, I'll ask Tobias (tmaier) to pull it.
