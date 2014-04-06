@@ -21,8 +21,8 @@ It includes the CSS; SCSS and LESS version of the stylesheet.
 
 ## Version
 
-Tag Manager version 2.4.2
-[8d91c8683546409ab9ec459456f12afa1a0a870f](https://github.com/max-favilli/tagmanager/commit/8d91c8683546409ab9ec459456f12afa1a0a870f)
+Tag Manager version 3.0.1
+[e71e5e3991cd30a9ad93c3cf879279602e68a85e](https://github.com/max-favilli/tagmanager/commit/e71e5e3991cd30a9ad93c3cf879279602e68a85e)
 
 ## Installation
 
@@ -43,7 +43,7 @@ The Tag Manager file will be added to the asset pipeline.
 Add the following line to `app/assets/javascripts/application.js`:
 
 ```js
-//= require bootstrap-tagmanager
+//= require tagmanager
 ```
 
 #### CSS, SCSS or LESS
@@ -52,14 +52,14 @@ Add the following line to `app/assets/stylesheets/application.css`:
 
 ```css
 /*
- *= require bootstrap-tagmanager
+ *= require tagmanager
  */
 ```
 
 If you want to change the variables, include it with the Sass `@import` method
 
 ```scss
-@import 'bootstrap-tagmanager';
+@import 'tagmanager.css.scss';
 ```
 
 Do the same if you are using LESS respectively.
