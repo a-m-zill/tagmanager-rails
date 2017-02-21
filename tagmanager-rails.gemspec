@@ -8,13 +8,13 @@ Gem::Specification.new do |s|
   s.authors     = ['Tobias L. Maier']
   s.email       = ['tobias.maier@baucloud.com']
   s.homepage    = 'https://github.com/tmaier/tagmanager-rails'
-  s.summary     = 'Use Tag Manager with Rails 3 & 4'
-  s.description = 'This gem provides Tag Manager for your Rails 3 & 4 application.'
+  s.summary     = 'Use Tag Manager with Rails 4 & 5'
+  s.description = 'This gem provides Tag Manager for your Rails 4 & 5 application.'
   s.licenses    = ['MIT', 'MPL-2.0']
 
   s.required_rubygems_version = '>= 1.3.6'
 
-  s.add_dependency 'railties', '>= 3.0', '< 5.0'
+  s.add_dependency('railties', '>= 4.1.0', '< 5.1')
 
   s.files        = Dir['{lib,vendor}/**/*'] + %w(LICENSE Rakefile README.md)
   s.require_path = 'lib'
