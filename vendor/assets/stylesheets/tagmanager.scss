@@ -8,6 +8,13 @@
 // Colors
 // -------------------------
 
+$white:                 #ffffff;
+$black:                 #000000;
+$gray:                  #555555;
+$grayDark:              #333333;
+
+$textColor:             $grayDark;
+
 $tagText:               $gray;
 $tagBackground:         #f5f5f5;
 $tagBorder:             #bbb;
@@ -30,7 +37,7 @@ $tagInfoBorder:         #5dc8f7;
 
 $tagInverseText:        #ccc;
 $tagInverseBackground:  $gray;
-$tagInverseBorder:      $gray-dark;
+$tagInverseBorder:      $grayDark;
 
 $tagDisabledText:       #aaa;
 $tagDisabledBackground: #e6e6e6;
@@ -47,8 +54,18 @@ $tagFontSizeMini:       $tagFontSize * 0.75; // ~10px
 $tagPadding:            4px;
 $tagMargin:             5px;
 
+$borderRadiusSmall:     3px;
+$baseBorderRadius:      4px;
+
+$baseLineHeight:        20px;
+
 // Tag Classes
 // --------------------------------------------------
+
+// Fonts
+// --------------------------------------------------
+
+$sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // Base tag class
 // -------------------------
@@ -59,8 +76,8 @@ $tagMargin:             5px;
   border: $tagBorder 1px solid;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
   display: inline-block;
-  border-radius: $border-radius-small;
-  font-family: $font-family-sans-serif;
+  border-radius: $borderRadiusSmall;
+  font-family: $sansFontFamily;
   font-size: $tagFontSize;
   margin: 0 $tagMargin $tagMargin 0;
   padding: $tagPadding;
@@ -74,12 +91,12 @@ $tagMargin:             5px;
   // -------------------------
 
   .tm-tag-remove {
-    color: #000000;
+    color: $black;
     font-weight: bold;
     margin-left: $tagPadding;
     opacity: 0.2;
-    &:hover {
-      color: #000000;
+    &:hover	{
+      color: $black;
       text-decoration: none;
       opacity: 0.4;
     }
@@ -114,7 +131,7 @@ $tagMargin:             5px;
     border-color: $tagInverseBorder;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset;
     .tm-tag-remove {
-      color: #FFFFFF;
+      color: $white;
     }
   }
 
@@ -123,12 +140,12 @@ $tagMargin:             5px;
 
   &.tm-tag-large {
     font-size: $tagFontSizeLarge;
-    border-radius: $border-radius-base;
+    border-radius: $baseBorderRadius;
     padding: 11px 7px;
   }
   &.tm-tag-small {
     font-size: $tagFontSizeSmall;
-    border-radius: $border-radius-small;
+    border-radius: $borderRadiusSmall;
     padding: 2px 4px;
   }
   &.tm-tag-mini {
@@ -141,7 +158,7 @@ $tagMargin:             5px;
   // -------------------------
 
   &.tm-tag-plain {
-    color: $text-color;
+    color: $textColor;
     box-shadow: none;
     background: none;
     border: none;
@@ -171,8 +188,8 @@ input[type="text"].tm-input {
 // -------------------------
 
 .control-group.tm-group {
-  margin-bottom: ($line-height-base / 2) - $tagMargin;
+  margin-bottom: ($baseLineHeight / 2) - $tagMargin;
 }
 .form-horizontal .control-group.tm-group {
-  margin-bottom: $line-height-base - $tagMargin;
+  margin-bottom: $baseLineHeight - $tagMargin;
 }

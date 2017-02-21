@@ -21,8 +21,8 @@ It includes the CSS; SCSS and LESS version of the stylesheet.
 
 ## Version
 
-Tag Manager version 3.0.1
-[e71e5e3991cd30a9ad93c3cf879279602e68a85e](https://github.com/max-favilli/tagmanager/commit/e71e5e3991cd30a9ad93c3cf879279602e68a85e)
+Tag Manager version 3.0.2
+[df9eb9935c8585a392dfc00602f890caf233fa94](https://github.com/max-favilli/tagmanager/commit/df9eb9935c8585a392dfc00602f890caf233fa94)
 
 ## Installation
 
