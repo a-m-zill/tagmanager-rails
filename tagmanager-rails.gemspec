@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = '>= 1.3.6'
 
-  s.add_dependency('railties', '>= 4.1.0', '< 5.1')
+  s.add_dependency('railties', '>= 4.1.0', '< 5.2')
 
   s.files        = Dir['{lib,vendor}/**/*'] + %w(LICENSE Rakefile README.md)
   s.require_path = 'lib'
